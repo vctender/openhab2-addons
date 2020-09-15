@@ -12,6 +12,7 @@
  */
 package org.openhab.binding.senechome.internal;
 
+import org.eclipse.jdt.annotation.NonNullByDefault;
 import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.jetty.client.HttpClient;
 import org.eclipse.smarthome.io.net.http.HttpClientFactory;
@@ -26,10 +27,11 @@ import com.google.gson.Gson;
  *
  * @author Steven Schwarznau - Initial contribution
  */
+@NonNullByDefault
 @Component(service = SenecHomeApiFactory.class)
 public class SenecHomeApiFactory {
 
-    private @NonNull HttpClient httpClient;
+    private HttpClient httpClient;
 
     @Activate
     public SenecHomeApiFactory(@Reference HttpClientFactory httpClientFactory) {
